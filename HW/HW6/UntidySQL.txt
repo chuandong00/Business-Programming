@@ -1,0 +1,9 @@
+SELECT order_items.order_id, SUM(order_items.list_price * (1-order_items.discount) * order_items.quantity) as gross_sale
+FROM order_items, orders, products, product_description
+GROUP BY order_items.order_id
+ORDER BY gross_sale DESC
+LIMIT 10 SELECT orderitems.orderid, orderitems.listprice * orderitems.quantity * (1 - orderitems.discount) AS 'order total' FROM orderitems ORDER BY orderitems.listprice * orderitems.quantity * orderitems.discount DESC
+SELECT orderitems.orderid, SUM((orderitems.listprice - (orderitems.listprice * orderitems.discount)) * orderitems.quantity) AS ordertotals
+	FROM orderitems
+    GROUP BY orderitems.orderid
+    ORDER BY ordertotals DESC

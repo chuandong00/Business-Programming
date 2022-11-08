@@ -1,0 +1,7 @@
+Node 2399
+More than one word then 123.456
+Number with comma 123,456.789
+No delineator123.456
+Number in 432.198 middle of text
+
+
